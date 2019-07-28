@@ -1,5 +1,5 @@
 #### -- Task2 -- #### create virtual network and subnets
-
+/*
 resource "azurerm_virtual_network" "arm_vnet_01" {
  name = "vnet-01"
  location = "${var.location}"
@@ -18,4 +18,7 @@ resource "azurerm_virtual_network" "arm_vnet_01" {
  tags = { environment = "azurerm_virtual_network arm_vnet_01" }
 
 }
+*/
+
+
 

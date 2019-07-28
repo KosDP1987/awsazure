@@ -10,21 +10,20 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   name = "${var.ResourceGroupName}"
   location = "${var.location}"
-  #name = "rg1"
-  #location = "West US"
   tags = {
     environment = "${var.ResourceGroupName} - ${var.location}"
   }
 }
 
 
-#module "network" {
-  #source = "./modules/network/"
-  #location = "West US"
-  #resource_group_name = "rg1"
-  #virtual_network_name = "${var.virtual_network_name}"
-  #subnet_prefix = "${var.subnet_prefix}"
-#}
+module "network" {
+  source = "./modules/network/"
+  location = "${var.location}"
+  ResourceGroupName = "${azurerm_resource_group.rg.name}"
+  virtual_network_name = "${var.virtual_network_name}"
+  subnet_prefix = "${var.subnet_prefix}"
+  address_space = "${var.address_space}"
+}
 
 
 ##### --  -- #####
