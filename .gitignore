@@ -15,6 +15,7 @@ target/
 .springBeans
 .terraform.tfstate
 .terraform.tfstate.backup
+.terraform.*
 
 ### IntelliJ IDEA ###
 .idea
