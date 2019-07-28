@@ -13,20 +13,14 @@ target/
 .project
 .settings
 .springBeans
+.terraform.tfstate
+.terraform.tfstate.backup
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-
-### NetBeans ###
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
 
 # Local .terraform directories
 */.terraform/
@@ -50,3 +44,4 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+

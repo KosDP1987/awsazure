@@ -7,29 +7,24 @@ provider "azurerm" {
   tenant_id = "9ef97a93-39c9-44c3-af45-dbaccc1593b7"
 }
 
-
-###### -- variable -- ######
-
-variable "ResourceGroupName" {}
-variable "Region" {}
-variable "VirtualNetwork01-name" {}
-variable "VirtualNetwork01-address-space" {}
-######
-
-resource "azurerm_resource_group" "rg1" {
-  name = "dev"
-  location = "EAST US 2"
-  tags { environment = "Body" }
-
+resource "azurerm_resource_group" "rg" {
+  name = "${var.ResourceGroupName}"
+  location = "${var.location}"
+  #name = "rg1"
+  #location = "West US"
+  tags = {
+    environment = "${var.ResourceGroupName} - ${var.location}"
+  }
 }
 
-resource "azurerm_virtual_network" "arm_vnet_01" {
-  name = "dev-vnet-01"
-  address_space = [""]
-  location = "EAST US 2"
-  resource_group_name = "EAST US 2"
-  tags { environment = "Dev01" }
-}
+
+#module "network" {
+  #source = "./modules/network/"
+  #location = "West US"
+  #resource_group_name = "rg1"
+  #virtual_network_name = "${var.virtual_network_name}"
+  #subnet_prefix = "${var.subnet_prefix}"
+#}
 
 
 ##### --  -- #####
