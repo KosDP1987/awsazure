@@ -1,4 +1,5 @@
-# awsazure
+# Terraform for Azure
+
 Task 1
  
 	• Get your Azure subscription's credentials
