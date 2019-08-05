@@ -6,13 +6,19 @@ variable "ResourceGroupName" {}
 #### -- azurerm_virtual_network -- ####
 variable "virtual_network_name" {}
 variable "address_space" {}
+variable "vnet_name" {type = "list"}
+variable "vm_name"   {type = "list"}
 
 #### -- azurerm_subnet -- ####
-variable "subnet_prefix" { type = "list"}
-variable "subnet_name" { type = "list"}
-#### -- for vm -- ####
-variable "count_index" {}
-#### -- for public ip -- ####
-variable "disable_public_ip" {}
-variable "pub_ip_name" {}
+variable "subnet_prefix" {}
+variable "arm_subnet_id" {}
 
+#### -- count -- ####
+variable "count_index" {}
+variable "disable_public_ip" {}
+variable "pub_ip_id" {}
+
+#### -- for OS -- ####
+variable "computer_name" {}
+variable "admin_username" {}
+variable "admin_password" {}
